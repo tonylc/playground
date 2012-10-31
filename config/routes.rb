@@ -1,5 +1,8 @@
 Playground::Application.routes.draw do
-  match "parent" => "pages#parent"
-  match "child" => "pages#child", as: :child_popup
-  match "other_page" => "pages#other_page", as: :other_page
+  scope "", controller: :pages do
+    match "parent"
+    match "child", as: :child_popup
+    match "other_page", as: :other_page
+    match "stacked", as: :stacked
+  end
 end
