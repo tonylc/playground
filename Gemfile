@@ -12,3 +12,9 @@ group :development do
   # To use debugger
   # gem 'ruby-debug'
 end
+
+group :production do
+  # gems specifically for Heroku go here
+  gem "pg"
+  gem 'unicorn'
+end
