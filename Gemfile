@@ -9,6 +9,7 @@ end
 
 group :development do
   gem 'heroku'
+  gem 'sqlite3'
   # To use debugger
   # gem 'ruby-debug'
 end

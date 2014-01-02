@@ -1,9 +1,25 @@
+<style>
+  .p-height { border: 1px solid black; }
+</style>
+<div id='iframe-body'>
 <h1>Yes you are looking at the other page</h1>
+
+<div id='child-body'>
+
+</div>
+<button id="dynamic-button">Add Dyanmic Content</button>
+</div>
 
 <%= content_for :script do %>
 <script>
   function testFunction() {
     return 5;
   }
+  $('#dynamic-button').on('click', function() {
+  	$('#child-body').append('<div class="p-height" style="height:' + Math.random() * 100 + 'px;">test</div>');
+  	var newHeight = $(document).height();
+  	console.log('iframe height', newHeight);
+  	window.parent.setIframeHeight(newHeight);
+  });
 </script>
 <% end %>
