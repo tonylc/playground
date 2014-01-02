@@ -5,6 +5,7 @@ gem 'json'
 gem 'jquery-rails'
 
 group :assets do
+  gem 'uglifier'
 end
 
 group :development do
