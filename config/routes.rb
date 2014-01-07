@@ -1,5 +1,6 @@
 Playground::Application.routes.draw do
   scope "", controller: :pages do
+    match "top"
     match "parent"
     match "child", as: :child_popup
     match "other_page", as: :other_page
